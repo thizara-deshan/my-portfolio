@@ -6,6 +6,11 @@ import { motion } from "framer-motion";
 import { sendEmail } from "@/action/sendEmail";
 
 export default function Contact() {
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    e.target.reset();
+  }
   return (
     <motion.section
       id="contact"
@@ -29,6 +34,9 @@ export default function Contact() {
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
           await sendEmail(formData);
+        }}
+        onSubmit={(e) => {
+          handleSubmit(e);
         }}
       >
         <input
