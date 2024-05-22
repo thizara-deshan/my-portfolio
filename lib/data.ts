@@ -6,7 +6,8 @@ import { GiDiploma } from "react-icons/gi";
 import { FaSchool } from "react-icons/fa";
 
 import corpcommentImg from "@/public/corpcomment.png";
-import orderEatsImg from "@/public/orderEats.png";
+import orderEatsImg from "@/public/ordereats.png";
+import tinykiddiesImg from "@/public/tinykiddies.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 
@@ -72,6 +73,14 @@ export const projectsData = [
     tags: ["React", "MongoDB", "Tailwind", "Node.js", "Express"],
     imageUrl: orderEatsImg,
     projectUrl: "https://food-ordering-app-frontend-lwtc.onrender.com/",
+  },
+  {
+    title: "TinyKiddies",
+    description:
+      "e-commerce website made using WordPress. The site is designed to provide a seamless shopping experience for parents looking for high-quality and adorable outfits for their little ones.",
+    tags: ["WordPress", "WooCommerce"],
+    imageUrl: tinykiddiesImg,
+    projectUrl: "https://tinykiddies.com/",
   },
 ] as const;
 
