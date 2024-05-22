@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { sendEmail } from "@/action/sendEmail";
 
 export default function Contact() {
-  function handleSubmit(e) {
+  function handleSubmit(e: any) {
     e.preventDefault();
 
     e.target.reset();
