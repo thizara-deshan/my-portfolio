@@ -21,13 +21,17 @@ export const sendEmail = async (formData: FormData) => {
   }
 
   try {
-    await resend.emails.send({
+    const { data } = await resend.emails.send({
       from: "onBording@resend.dev",
       to: "thizaradeshan@gmail.com",
       subject: "Message from contact form",
       reply_to: senderEmail,
       text: message,
     });
+
+    return {
+      data,
+    };
   } catch (error: unknown) {
     return {
       error: getErrorMessage(error),

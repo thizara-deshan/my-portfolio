@@ -39,10 +39,9 @@ export default function Into() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hello, I'm Thizara.</span> I'm a{" "}
-        <span className="font-bold">Front-End developer</span> and{" "}
+        <span className="font-bold">Full-stack developer</span> and{" "}
         <span className="font-bold"> undergraduate</span> IT student. I enjoy
-        building <span className="italic">websites & apps</span>. My focus is{" "}
-        <span className="underline">fullstack development.</span>
+        building <span className="italic">websites & apps</span>.
       </motion.h1>
 
       <motion.div
@@ -74,7 +73,7 @@ export default function Into() {
           focus:scale-110 hover:scale-110 
           active:scale-105 
           transition cursor-pointer borderBlack dark:bg-white/15 dark:hover:bg-white/10"
-          href="/CV.pdf"
+          href="/Resume.pdf"
           download
         >
           Download CV
