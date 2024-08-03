@@ -5,6 +5,7 @@ import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -49,6 +50,11 @@ export default function Project({
                 </li>
               ))}
             </ul>
+            <div className=" ">
+              <p className=" flex gap-1 px-2 py-4  text-gray-700 dark:text-white/70">
+                <FaExternalLinkAlt className=" text-lg  my-1 hover:text-xl" />
+              </p>
+            </div>
           </div>
 
           <Image
