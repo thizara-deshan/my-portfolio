@@ -59,7 +59,7 @@ export const experiencesData = [
     title: "Diploma in Information Technology",
     location: "UCSC",
     description:
-      "I completed my diploma in Information Technology in 2022. Now, in my second year as an undergraduate, I continue to deepen my knowledge and skills in this dynamic field.",
+      "I completed my diploma in Information Technology in 2022. Now, in my Final year as an undergraduate, I continue to deepen my knowledge and skills in this dynamic field.",
     icon: React.createElement(GiDiploma),
     date: "2022-8",
   },
