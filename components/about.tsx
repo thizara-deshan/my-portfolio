@@ -22,7 +22,7 @@ export default function About() {
         in my <span className="font-medium">second year</span> of studies, I
         have a solid foundation in{" "}
         <span className="font-medium italic underline">
-          HTML, CSS, JavaScript, and React
+          HTML, CSS, JavaScript, React, and Next.js
         </span>{" "}
         , and I am actively learning and applying concepts in{" "}
         <span className="font-medium">full-stack development.</span>
@@ -36,14 +36,6 @@ export default function About() {
         </span>{" "}
         in a dynamic industry like
         <span className="italic"> software engineering.</span>
-      </p>
-
-      <p>
-        I am currently seeking <span className="font-medium"> Internship</span>{" "}
-        opportunities where I can further expand my knowledge and contribute to
-        real-world projects. I am eager to work with like-minded professionals
-        and contribute positively to a team's success while gaining invaluable
-        hands-on experience.
       </p>
     </motion.section>
   );

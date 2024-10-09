@@ -8,8 +8,7 @@ import { FaSchool } from "react-icons/fa";
 import corpcommentImg from "@/public/corpcomment.png";
 import orderEatsImg from "@/public/ordereats.png";
 import tinykiddiesImg from "@/public/tinykiddies.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import sasanlee from "@/public/sasanlee.png";
 
 export const links = [
   {
@@ -82,6 +81,14 @@ export const projectsData = [
     imageUrl: tinykiddiesImg,
     projectUrl: "https://tinykiddies.com/",
   },
+  {
+    title: "Sasanlee",
+    description:
+      "Travel agencywebsite built with Next.js, Typescript, and Tailwind CSS, offering a visually appealing and user-friendly platform for booking tours and exploring destinations.",
+    tags: ["Next.js", "TypeScript", "Tailwind", "AWS Lambda", "AWS SES"],
+    imageUrl: sasanlee,
+    projectUrl: "https://sasanleetravels.com/",
+  },
 ] as const;
 
 export const skillsData = [
@@ -98,4 +105,8 @@ export const skillsData = [
   "Express",
   "Framer Motion",
   "WordPress",
+  "MongoDB",
+  "AWS",
+  "Docker",
+  "PostgreSQL",
 ] as const;
