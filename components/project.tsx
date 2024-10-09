@@ -51,7 +51,7 @@ export default function Project({
               ))}
             </ul>
             <div className=" ">
-              <p className=" flex gap-1 px-2 py-4  text-gray-700 dark:text-white/70">
+              <p className=" flex gap-1 px-2 py-1  text-gray-700 dark:text-white/70">
                 <FaExternalLinkAlt className=" text-lg  my-1 hover:text-xl" />
               </p>
             </div>
