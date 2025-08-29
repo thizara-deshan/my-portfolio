@@ -9,6 +9,7 @@ import corpcommentImg from "@/public/corpcomment.png";
 import orderEatsImg from "@/public/ordereats.png";
 import tinykiddiesImg from "@/public/tinykiddies.png";
 import sasanlee from "@/public/sasanlee.png";
+import bitTravel from "@/public/bitTravel.png";
 
 export const links = [
   {
@@ -48,19 +49,19 @@ export const experiencesData = [
   },
   {
     title: "Foundation Of Information Technology",
-    location: "UCSC",
+    location: "University of Colombo School of Computing (UCSC)",
     description:
       "I have completely done FIT program in university of Colombo School of Computing",
     icon: React.createElement(FaCertificate),
     date: "2021-4",
   },
   {
-    title: "Diploma in Information Technology",
-    location: "UCSC",
+    title: "Bachelor of Information Technology",
+    location: "University of Colombo School of Computing (UCSC)",
     description:
-      "I completed my diploma in Information Technology in 2022. Now, in my Final year as an undergraduate, I continue to deepen my knowledge and skills in this dynamic field.",
+      "I completed my degree in Information Technology in 2025. I continue to deepen my knowledge and skills in this dynamic field.",
     icon: React.createElement(GiDiploma),
-    date: "2022-8",
+    date: "2021-2025",
   },
 ] as const;
 
@@ -72,6 +73,7 @@ export const projectsData = [
     tags: ["React", "MongoDB", "Tailwind", "Node.js", "Express"],
     imageUrl: orderEatsImg,
     projectUrl: "https://food-ordering-app-frontend-lwtc.onrender.com/",
+    githubUrl: "https://github.com/thizara-deshan/food-ordering-app-frontend",
   },
   {
     title: "TinyKiddies",
@@ -80,6 +82,7 @@ export const projectsData = [
     tags: ["WordPress", "WooCommerce"],
     imageUrl: tinykiddiesImg,
     projectUrl: "https://tinykiddies.com/",
+    githubUrl: "",
   },
   {
     title: "Sasanlee",
@@ -88,6 +91,27 @@ export const projectsData = [
     tags: ["Next.js", "TypeScript", "Tailwind", "AWS Lambda", "AWS SES"],
     imageUrl: sasanlee,
     projectUrl: "https://sasanleetravels.com/",
+    githubUrl: "",
+  },
+  {
+    title: "Travel Booking System",
+    description:
+      "Full-stack travel booking system with Admin and Employee panels, built with Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, and Prisma ORM. Deployed on Raspberry Pi using Docker, Nginx, and Cloudflare Tunnel for secure and accessible hosting.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "Node.js",
+      "Express.js",
+      "Prisma",
+      "Docker",
+      "Nginx",
+      "Raspberry Pi",
+      "Cloudflare Tunnel",
+    ],
+    imageUrl: bitTravel, // replace with your imported image variable
+    projectUrl: "https://raspi-travel.thizara.dev/",
+    githubUrl: "https://github.com/thizara-deshan/travel",
   },
 ] as const;
 
@@ -99,14 +123,15 @@ export const skillsData = [
   "React",
   "Next.js",
   "Node.js",
-  "Git",
+  "Express",
   "Tailwind",
   "Redux",
-  "Express",
-  "Framer Motion",
-  "WordPress",
   "MongoDB",
+  "PostgreSQL",
+  "Git",
+  "WordPress",
+  "Linux",
+  "Nginx",
   "AWS",
   "Docker",
-  "PostgreSQL",
 ] as const;

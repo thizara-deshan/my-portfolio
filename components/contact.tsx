@@ -1,86 +1,43 @@
-"use client";
-
-import { FaPaperPlane } from "react-icons/fa";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
-import { sendEmail } from "@/action/sendEmail";
+import { Mail, Twitter } from "lucide-react";
+import Link from "next/link";
 
 export default function Contact() {
-  function handleSubmit(e: any) {
-    e.preventDefault();
-  }
   return (
-    <motion.section
-      id="contact"
-      className="mb-20 sm:mb-28 w-[min(100%, 38rem)] 
-    text-center scroll-mt-28"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
-    >
-      <SectionHeading>Contact Me</SectionHeading>
-      <p className="text-gray-700 dark:text-white/70">
-        Please contact me directly at{" "}
-        <a className="underline" href="mailto:thizaradeshan@gmail.com">
-          thizaradeshan@gmail.com
-        </a>{" "}
-        or through this form{" "}
-      </p>
+    <main className="min-h-min bg-background">
+      {/* Contact Section */}
+      <section className="py-24 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground mb-6">
+            Get in Touch
+          </h2>
 
-      <form
-        className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          await sendEmail(formData);
-        }}
-        onSubmit={(e) => {
-          handleSubmit(e);
-        }}
-      >
-        <input
-          placeholder="Your email"
-          name="senderEmail"
-          className="h-14 px-4 rounded-lg  borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          type="email"
-          required
-          maxLength={500}
-        />
-        <br />
+          <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+            I'd love to hear from you! Whether you have a project in mind or
+            just want to connect, feel free to reach out via email or drop me a
+            message on Twitter.
+          </p>
 
-        <textarea
-          placeholder="Your Message"
-          name="message"
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          required
-          maxLength={5000}
-        />
-        <br />
-        <button
-          type="submit"
-          className="group flex h-[3rem] w-[8rem] gap-2
-           bg-gray-900 items-center 
-          justify-center
-        text-white rounded-full 
-        outline-none 
-        transition-all 
-        focus:scale-110 
-        hover:scale-110 
-        active:scale-105
-        hover:bg-gray-950 
-        dark:bg-white/10
-        "
-        >
-          Submit{" "}
-          <FaPaperPlane
-            className=" text-xs 
-            opacity-70 
-          transition-all 
-          group-hover:translate-x-1 
-          group-hover:-translate-y-1 
-          "
-          />
-        </button>
-      </form>
-    </motion.section>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Link
+              href="mailto:thizaradeshan@gmail.com"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium"
+            >
+              <Mail className="w-5 h-5" />
+              Send Email
+            </Link>
+
+            <Link
+              href="https://x.com/Thizara1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-6 py-3 border border-border text-foreground rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors duration-200 font-medium"
+            >
+              <Twitter className="w-5 h-5" />
+              Twitter
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

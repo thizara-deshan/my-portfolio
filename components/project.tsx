@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef } from "react";
 import { projectsData } from "@/lib/data";
+
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -15,67 +16,65 @@ export default function Project({
   tags,
   imageUrl,
   projectUrl,
+  githubUrl,
 }: ProjectProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
   return (
-    <a href={projectUrl}>
-      <motion.div
-        ref={ref}
-        style={{
-          scale: scaleProgess,
-          opacity: opacityProgess,
-        }}
-        className="group mb-3 sm:mb-8 last:mb-0"
-      >
-        <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[22rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-black dark:bg-white/10 dark:hover:bg-white/20">
-          <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-            <h3 className="text-2xl font-semibold dark:text-white">{title}</h3>
-            <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+      <div className="relative aspect-video overflow-hidden">
+        <Image
+          src={imageUrl || "/placeholder.svg"}
+          alt={`${title} project screenshot`}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      <CardContent className="p-6">
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-xl font-semibold text-balance mb-2">{title}</h3>
+            <p className="text-muted-foreground text-pretty leading-relaxed">
               {description}
             </p>
-            <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto py-3">
-              {tags.map((tag, index) => (
-                <li
-                  className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                  key={index}
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
-            <div className=" ">
-              <p className=" flex gap-1 px-2 py-1  text-gray-700 dark:text-white/70">
-                <FaExternalLinkAlt className=" text-lg  my-1 hover:text-xl" />
-              </p>
-            </div>
           </div>
 
-          <Image
-            src={imageUrl}
-            alt="Project I worked on"
-            quality={95}
-            className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tech) => (
+              <Badge key={tech} variant="secondary" className="text-xs">
+                {tech}
+              </Badge>
+            ))}
+          </div>
 
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
+          <div className="flex gap-3 pt-2">
+            <Button asChild size="sm" className="flex-1">
+              <a
+                href={projectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <ExternalLink className="h-4 w-4" />
+                View Live
+              </a>
+            </Button>
 
-        group-even:right-[initial] group-even:-left-40"
-          />
-        </section>
-      </motion.div>
-    </a>
+            {githubUrl && (
+              <Button asChild variant="outline" size="sm">
+                <a
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Github className="h-4 w-4" />
+                  Code
+                </a>
+              </Button>
+            )}
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

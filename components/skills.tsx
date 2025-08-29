@@ -1,48 +1,31 @@
-"use client";
-
+import { cn } from "@/lib/utils";
 import { skillsData } from "@/lib/data";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
 
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
+interface SkillsSectionProps {
+  className?: string;
+}
 
-export default function Skills() {
+export function SkillsSection({ className }: SkillsSectionProps) {
   return (
-    <section
-      id="skills"
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
-    >
-      <SectionHeading>my skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-3 text-lg texr-gray-800">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="bg-white border border-black/[0.1] rounded-xl
-            px-6 py-3  dark:bg-white/10 dark:text-white/80"
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
-          >
-            {skill}
-          </motion.li>
-        ))}
-      </ul>
+    <section className={cn("py-16 px-4", className)}>
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12 text-balance">
+          Skills
+        </h2>
+
+        <div className="flex flex-wrap gap-3 justify-center">
+          {skillsData.map((skill, index) => (
+            <div
+              key={index}
+              className="group relative bg-card border border-border rounded-lg px-10 py-5 flex items-center justify-center text-center shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 hover:border-primary/20 min-w-[80px] h-10"
+            >
+              <span className="text-base font-medium text-card-foreground group-hover:text-primary transition-colors duration-200 whitespace-nowrap">
+                {skill}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
