@@ -9,7 +9,7 @@ import { EducationTimeline } from "@/components/education";
 
 export default function Home() {
   return (
-    <main className="tems-center px-4">
+    <main className="items-center px-4">
       <Intro />
       <Projects />
       <SkillsSection />
