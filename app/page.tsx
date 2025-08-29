@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Intro from "@/components/intro";
 
-import SectionDivider from "@/components/section-divider";
 import Projects from "@/components/projects";
 import { SkillsSection } from "@/components/skills";
 
