@@ -5,11 +5,11 @@ import { GiDiploma } from "react-icons/gi";
 
 import { FaSchool } from "react-icons/fa";
 
-import corpcommentImg from "@/public/corpcomment.png";
 import orderEatsImg from "@/public/ordereats.png";
 import tinykiddiesImg from "@/public/tinykiddies.png";
 import sasanlee from "@/public/sasanlee.png";
 import bitTravel from "@/public/bitTravel.png";
+import nea from "@/public/nea.png";
 
 export const links = [
   {
@@ -112,6 +112,15 @@ export const projectsData = [
     imageUrl: bitTravel, // replace with your imported image variable
     projectUrl: "https://raspi-travel.thizara.dev/",
     githubUrl: "https://github.com/thizara-deshan/travel",
+  },
+  {
+    title: "NEA - Award ceromany website",
+    description:
+      "A modern, responsive website built for the NEA to showcase event details and highlight award ceremonies. Developed using React.js and Tailwind CSS, with smooth animations powered by Framer Motion and deployed on AWS for scalability and performance.",
+    tags: ["react.js", "Tailwind", "AWS", "Framer"],
+    imageUrl: nea, // replace with your imported image variable
+    projectUrl: "https://nationaleducatorawards.lk/",
+    githubUrl: "",
   },
 ] as const;
 
